@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Student Registration Form</title>
+</h:head>
+<h:body>
+
+	<h:form>
+
+First name :<h:inputText id="firstname" value="#{user.name}" />
+
+		<br></br>
+Last name :<h:inputText id="lastname" value="#{user.lName}" />
+		<br></br>
+		
+Password :<h:inputSecret id="password" value="#{user.password}" />
+		<br></br>
+		
+		Country : <h:selectOneMenu value="#{studentTwo.country}">
+			<f:selectItems value="#{studentTwo.countryOptions}"/>
+
+		</h:selectOneMenu>
+		<br></br>
+		
+		<h:selectOneRadio value="#{studentTwo.favoriteLanguage}"> 
+		<f:selectItem  itemValue = "Java" itemLabel="Java" />
+		<f:selectItem  itemValue = "c++" itemLabel="C++" />
+		<f:selectItem  itemValue = "php" itemLabel="PHP" />
+		<f:selectItem  itemValue = "R" itemLabel="R" />
+		<f:selectItem  itemValue = "Python" itemLabel="Python" />
+				
+		
+		</h:selectOneRadio>
+		
+	
+		<h:commandButton value="Submit" action="student_response" />
+
+
+	</h:form>
+
+</h:body>
+
+</html>

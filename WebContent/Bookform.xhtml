@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    	<style type="text/css">
+    button.ui-button {
+        margin-right: .5rem;
+    }
+</style>
+    </h:head>
+    <h:body>
+    <div class="card">
+    <p:dataTable id="products" var="p" value="#{bookBean.finddata()}">
+        <f:facet name="header">
+            <div class="p-d-flex p-jc-between p-ai-center">
+                List of Books
+
+                <div>
+                    <p:commandButton id="toggler" type="button" value="Columns" icon="pi pi-align-justify"/>
+                    <p:columnToggler datasource="products" trigger="toggler"/>
+                </div>
+            </div>
+        </f:facet>
+
+        <p:column headerText="BookId">
+            <h:outputText value="#{p.bookId}" />
+        </p:column>
+
+        <p:column headerText="BookName">
+            <h:outputText value="#{p.bookName}" />
+        </p:column>
+
+     
+       
+   
+
+        <p:column headerText="Price">
+            <h:outputText value="#{p.price}">
+                <f:convertNumber type="currency" currencySymbol="$"/>
+            </h:outputText>
+        </p:column>
+    
+    </p:dataTable>
+  <div class="card">
+   
+</div>
+</div>
+    </h:body>
+</html>
